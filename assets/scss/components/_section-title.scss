@@ -1,0 +1,24 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.0 Section Title  
+/*----------------------------------------*/
+
+
+// section title 
+.section-title {
+  color: var(--bd-heading);
+}
+
+// Section subtitle
+.section-subtitle {
+  font-size: 14px;
+  font-weight: var(--bd-fw-medium);
+  display: inline-flex;
+  color: var(--bd-primary);
+  align-items: center;
+  gap: 10px;
+  &.color-warning {
+    color: var(--bd-tertiary);
+  }
+}

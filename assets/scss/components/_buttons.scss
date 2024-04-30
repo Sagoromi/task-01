@@ -1,0 +1,379 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.2 Buttons
+/*----------------------------------------*/
+
+.btn-style {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--bd-fw-medium);
+  height: 56px;
+  padding: 0 30px;
+  gap: 8px;
+}
+// primary button
+.bd-primary-btn {
+  background-color: transparent;
+  color: var(--bd-primary);
+  border: 2px solid var(--bd-primary);
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 0 25px 0 25px;
+  position: relative;
+  z-index: 5;
+  &-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--bd-primary);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &:hover {
+    color: var(--bd-white);
+    border: 2px solid transparent;
+    .bd-primary-btn-circle {
+      width: 220px;
+      height: 220px;
+      opacity: 1;
+      z-index: -1;
+    }
+    &.has-arrow {
+      .bd-primary-btn-text {
+        transform: translateX(12px);
+      }
+      .arrow-left {
+        right: -25%;
+      }
+      .arrow-right {
+        left: 25px;
+      }
+    }
+  }
+
+  &.has-arrow {
+    padding: 0 35px 0 35px;
+
+    .bd-primary-btn-text {
+      position: relative;
+      z-index: 1;
+      transform: translateX(-12px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .bd-primary-btn-arrow {
+      position: absolute;
+      z-index: 9;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .arrow-left {
+      right: 26px;
+    }
+
+    .arrow-right {
+      left: -25%;
+    }
+  }
+
+  &.btn-secondary {
+    color: var(--bd-secondary);
+    border-color: var(--bd-secondary);
+
+    .bd-primary-btn-circle {
+      background-color: var(--bd-secondary);
+    }
+
+    &:hover {
+      color: var(--bd-white);
+      border-color: var(--bd-secondary);
+      background-color: var(--bd-secondary);
+    }
+  }
+
+  &.btn-tertiary {
+    color: var(--bd-tertiary);
+    border-color: var(--bd-tertiary);
+
+    .bd-primary-btn-circle {
+      background-color: var(--bd-tertiary);
+    }
+
+    &:hover {
+      color: var(--bd-white);
+      border-color: var(--bd-tertiary);
+      background-color: var(--bd-tertiary);
+    }
+  }
+
+  &.btn-quaternary {
+    color: var(--bd-quaternary);
+    border-color: var(--bd-quaternary);
+
+    .bd-primary-btn-circle {
+      background-color: var(--bd-quaternary);
+    }
+
+    &:hover {
+      color: var(--bd-white);
+      border-color: var(--bd-quaternary);
+      background-color: var(--bd-quaternary);
+    }
+  }
+
+  &.bd-success {
+    color: var(--bd-bg-success);
+    border-color: var(--bd-bg-success);
+
+    .bd-primary-btn-circle {
+      background-color: var(--bd-bg-success);
+    }
+
+    &:hover {
+      color: var(--bd-white);
+      border-color: var(--bd-bg-success);
+      background-color: var(--bd-bg-success);
+    }
+  }
+
+  &.bd-danger {
+    color: var(--bd-bg-danger);
+    border-color: var(--bd-bg-danger);
+
+    .bd-primary-btn-circle {
+      background-color: var(--bd-bg-danger);
+    }
+
+    &:hover {
+      color: var(--bd-white);
+      border-color: var(--bd-bg-danger);
+      background-color: var(--bd-bg-danger);
+    }
+  }
+
+  &.is-bg {
+    background-color: var(--bd-primary);
+    color: var(--bd-white);
+
+    .bd-primary-btn-circle {
+      background-color: var(--bd-heading);
+    }
+
+    &:hover {
+      background-color: var(--bd-heading);
+      color: var(--bd-white);
+      border-color: var(--bd-heading);
+    }
+
+    &.btn-white {
+      background-color: var(--bd-secondary);
+
+      .bd-primary-btn-circle {
+        background-color: var(--bd-primary);
+      }
+
+      &:hover {
+        color: var(--bd-white);
+        border-color: var(--bd-primary);
+        background-color: var(--bd-primary);
+      }
+    }
+    &.btn-secondary {
+      background-color: var(--bd-secondary);
+
+      .bd-primary-btn-circle {
+        background-color: var(--bd-primary);
+      }
+
+      &:hover {
+        color: var(--bd-white);
+        border-color: var(--bd-primary);
+        background-color: var(--bd-primary);
+      }
+    }
+
+    &.btn-tertiary {
+      background-color: var(--bd-tertiary);
+      color: var(--bd-white);
+      border-color: var(--bd-tertiary);
+
+      .bd-primary-btn-circle {
+        background-color: var(--bd-primary);
+      }
+
+      &:hover {
+        color: var(--bd-white);
+        border-color: var(--bd-primary);
+        background-color: var(--bd-primary);
+      }
+    }
+
+    &.btn-quaternary {
+      background-color: var(--bd-quaternary);
+      color: var(--bd-white);
+      border-color: var(--bd-quaternary);
+
+      .bd-primary-btn-circle {
+        background-color: var(--bd-primary);
+      }
+
+      &:hover {
+        color: var(--bd-white);
+        border-color: var(--bd-primary);
+        background-color: var(--bd-primary);
+      }
+    }
+
+    &.bd-success {
+      background-color: var(--bd-bg-success);
+      color: var(--bd-white);
+      border-color: var(--bd-bg-success);
+
+      .bd-primary-btn-circle {
+        background-color: var(--bd-primary);
+      }
+
+      &:hover {
+        color: var(--bd-white);
+        border-color: var(--bd-primary);
+        background-color: var(--bd-primary);
+      }
+    }
+
+    &.bd-danger {
+      background-color: var(--bd-bg-danger);
+      color: var(--bd-white);
+      border-color: var(--bd-bg-danger);
+
+      .bd-primary-btn-circle {
+        background-color: var(--bd-primary);
+      }
+
+      &:hover {
+        color: var(--bd-white);
+        border-color: var(--bd-primary);
+        background-color: var(--bd-primary);
+      }
+    }
+    &.is-white {
+      .bd-primary-btn-circle {
+        background-color: var(--bd-white);
+      }
+      &:hover {
+        color: var(--bd-heading);
+        border-color: var(--bd-white);
+        background-color: var(--bd-white);
+      }
+    }
+  }
+}
+/*Global btn styles*/
+.bd-half-outline-btn {
+  position: relative;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  height: 50px;
+  text-align: center;
+  text-indent: 53px;
+  transition: 300ms;
+  padding: 0px 0px 0px 10px;
+  position: relative;
+  z-index: 5;
+  .text {
+    font-weight: 500;
+    font-size: 16px;
+  }
+	&::before {
+    content: "";
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 0px;
+    border: 1px solid #282936;
+    z-index: -1;
+	}
+	&::after {
+    content: "\f178";
+    position: absolute;
+    font-family: var(--bd-ff-fontawesome);
+    top: 50%;
+    left: -37px;
+    transform: translateY(-50%);
+    transition: 400ms;
+    font-size: 18px;
+	}
+	&:hover {
+
+    .text {
+      transform: translateX(-20px);
+    }
+    color: var(--bd-primary);
+		&::before {
+			width: 100%;
+      border-color: var(--bd-primary);
+		}
+    &::after {
+      border-color: var(--bd-primary);
+    }
+	}
+  &.btn-xs {
+    &::before {
+      height: 45px;
+    }
+  }
+}
+// Croppinfg style btn
+.btn-style {
+  &.btn-hover-x {
+    overflow: hidden;
+    position: relative;
+    transition: all 1s;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 150%;
+      height: 0%;
+      left: 50%;
+      top: 50%;
+      background-color: var(--bd-black);
+      transform: translateX(-50%) translateY(-50%) rotate(25deg);
+      transition: all 0.75s;
+      opacity: 0.5;
+      z-index: -1;
+    }
+    &.hover-white {
+      &:hover {
+        color: var(--bd-black);
+        span {
+          svg * {
+            fill: var(--bd-black);
+            @extend %bd-transition-3;
+          }
+        }
+        &::after {
+          background-color: var(--bd-white);
+        }
+      }
+    }
+    &:hover {
+      background-color: transparent;
+      color: var(--bd-white);
+      &::after {
+        height: 780%;
+        opacity: 1;
+      }
+    }
+  }
+}

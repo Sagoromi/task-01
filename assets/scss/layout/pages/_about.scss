@@ -1,0 +1,99 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4.1 About css
+/*----------------------------------------*/
+.bd-about-area {
+    &.style-one {
+        margin: 0 100px;
+    }
+}
+.about-shapes {
+    .shape-one {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .shape-two {
+        position: absolute;
+        bottom: 57px;
+        right: 55px;
+        z-index: -1;
+    }
+    .shape-three {
+        position: absolute;
+        top: 57px;
+        right: 5%;
+    }
+    .shape-four {
+        position: absolute;
+        bottom: 94px;
+        right: 80px;
+    }
+}
+.about-thumb-wrap {
+    &.style-one {
+        .thumb {
+            max-width: 568px;
+            position: relative;
+            z-index: 5;
+            &::before {
+                position: absolute;
+                content: "";
+                width: calc(100% + 60px);
+                height: calc(100% + 60px);
+                display: inline-block;
+                background-color: #C59D5F;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            }
+        }
+    }
+}
+.about-thumb-wrap {
+    &.style-one {
+        position: relative;
+        .shape-ragtangle {
+            position: absolute;
+            content: "";
+            width: 226px;
+            height: 200%;
+            display: inline-block;
+            background-color: #C59D5F;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    }
+}
+.about-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;;
+    border-top: 1px solid var(--bd-border-primary);
+    .about-info-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-top: 30px;
+        &:not(:last-child) {
+            border-right: 1px solid var(--bd-border-primary);
+            margin-right: 30px;
+            padding-right: 30px;
+        }
+    }
+    .content {
+        .title {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .description {
+            font-size: 14px;
+        }
+    }
+}
