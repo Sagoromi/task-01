@@ -5,7 +5,6 @@
 /*----------------------------------------*/
 
 // Marquee Text
-
 @-webkit-keyframes btnMarqueeTextX {
 	100% {
 		transform: translateX(-200%)
@@ -386,8 +385,6 @@
 		transform: rotate(359deg)
 	}
 }
-
-
 // Animate offcanvas draw
 @keyframes qode-draw {
 
@@ -407,7 +404,6 @@
 		clip-path: inset(-2px 100% -2px 0)
 	}
 }
-
 // Mouse scoll animation
 @include keyframes(scroll) {
 	0% {
@@ -573,8 +569,6 @@
 
 // Clip Type Animation - End
 
-
-
 // Line Animation css
 @keyframes line1 {
 	0% {
@@ -619,41 +613,12 @@
 	}
 }
 
-// GGGGGGGGGGGGGG
-@keyframes bannerAnimationOne {
-	0% {
-		transform: translate(0px, 0px);
+// up down animtaion
+@include keyframes(bannerUpDown){
+	0% { 
+		@include transform(translateY(0));
 	}
-
-	20% {
-		transform: translate(20px, -5px);
-	}
-
-	40% {
-		transform: translate(50px, 20px);
-	}
-
-	60% {
-		transform: translate(20px, 50px);
-	}
-
-	80% {
-		transform: translate(-20px, 30px);
-	}
-
-	100% {
-		transform: translate(0px, 0px);
-	}
-}
-
-
-// about text animation
-@include keyframes(about-text) {
-	0% {
-		width: 0;
-	}
-
-	100% {
-		width: 100%;
+    100% { 
+		@include transform(translateY(-20px));
 	}
 }
