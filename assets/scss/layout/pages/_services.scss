@@ -1,0 +1,63 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4.4 services css
+/*----------------------------------------*/
+.service {
+  &__item {
+    padding: 29px 28px 29px 36px;
+    border: 1px solid rgb(221, 221, 221);
+    position: relative;
+    z-index: 5;
+    border-radius: 0px 10px 10px 0;
+    z-index: 5;
+    @media #{$xs} {
+      padding: 29px 28px 29px 30px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 5px;
+      background: linear-gradient(180deg, #E5382A 38.38%, #000000 100%);
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    &.is-active {
+      background-color: var(--bd-heading);
+      .service {
+        &__title {
+          color: var(--bd-white);
+        }
+        &__description {
+          color: #7C7C7C;
+          border-color: rgba($white, $alpha: 0.2);
+        }
+      }
+      .text__btn {
+        .round {
+          background-color: var(--bd-white);
+        }
+        &:hover {
+          color: var(--bd-white);
+          .round {
+            color: var(--bd-black);
+          }
+        }
+      }
+    }
+  }
+  &__title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    @media #{$lg,$xxs} {
+      font-size: 20px;
+    }
+  }
+  &__description {
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid rgba($heading, $alpha: 0.2);
+    padding-bottom: 20px;
+  }
+}

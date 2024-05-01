@@ -37,9 +37,8 @@ h6 {
 	margin-top: 0px;
 	line-height: 1.125;
 	margin-bottom: 0;
-	font-weight: normal;
 	word-break: break-word;
-	font-family: var(--bd-ff-secondary);
+	font-weight: var(--bd-fw-bold);
 }
 
 h1,
@@ -188,12 +187,12 @@ ul {
 }
 
 p {
-	font-size: var(--bd-fs-p);
-	font-family: var(--bd-ff-p);
-	font-weight: var(--bd-fw-normal);
-	color: var(--bd-text-body);
-	margin-bottom: 15px;
-	line-height: 26px;
+    font-size: var(--bd-fs-p);
+    font-family: var(--bd-ff-secondary);
+    font-weight: var(--bd-fw-bold);
+    color: var(--bd-text-body);
+    margin-bottom: 15px;
+    line-height: 28px;
 	&.b1 {
 		font-size: var(--bd-fs-b1);
 		line-height: 1.714;
@@ -288,6 +287,7 @@ button {
 img {
 	max-width: 100%;
 	object-fit: cover;
+	height: 100%;
 }
 
 button:hover {

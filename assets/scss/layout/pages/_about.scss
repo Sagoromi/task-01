@@ -3,97 +3,239 @@
 /*----------------------------------------*/
 /*  4.1 About css
 /*----------------------------------------*/
-.bd-about-area {
-    &.style-one {
-        margin: 0 100px;
+.about {
+    &__shapes {
+        .shape-one {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .shape-two {
+            position: absolute;
+            bottom: 57px;
+            right: 55px;
+            z-index: -1;
+        }
+        .shape-three {
+            position: absolute;
+            top: 57px;
+            right: 5%;
+        }
+        .shape-four {
+            position: absolute;
+            bottom: 94px;
+            right: 80px;
+        }
     }
-}
-.about-shapes {
-    .shape-one {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-    .shape-two {
-        position: absolute;
-        bottom: 57px;
-        right: 55px;
-        z-index: -1;
-    }
-    .shape-three {
-        position: absolute;
-        top: 57px;
-        right: 5%;
-    }
-    .shape-four {
-        position: absolute;
-        bottom: 94px;
-        right: 80px;
-    }
-}
-.about-thumb-wrap {
-    &.style-one {
-        .thumb {
-            max-width: 568px;
-            position: relative;
-            z-index: 5;
-            &::before {
-                position: absolute;
-                content: "";
-                width: calc(100% + 60px);
-                height: calc(100% + 60px);
-                display: inline-block;
-                background-color: #C59D5F;
-                border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: -1;
+    &__content {
+        &-inner {
+            margin-right: 50px;
+            @media #{$xs,$sm,$md,$lg,$xl} {
+                margin-right: 0;
             }
         }
     }
-}
-.about-thumb-wrap {
-    &.style-one {
-        position: relative;
-        .shape-ragtangle {
-            position: absolute;
-            content: "";
-            width: 226px;
-            height: 200%;
-            display: inline-block;
-            background-color: #C59D5F;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
+    &__info {
+        display: grid;
+        grid-template-columns: auto 228px;
+        align-self: center;
+        @media #{$lg} {
+            grid-template-columns: auto auto;  
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr;  
+        }
+        &-list {
+            background-color: var(--bd-white);
+            padding: 25px 27px;
+            border-radius: 10px 0px 0 10px;
+            @media #{$xs} {
+                border-radius: 10px 10px 0px 0px;
+                padding: 20px 20px;
+            }
+            .icon__list {
+                li {
+                    display: flex;
+                    align-items: start;
+                    gap: 10px;
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+        .info-thumb {
+            img {
+                border-radius: 0px 10px 10px 0px;
+                @media #{$xs} {
+                    border-radius: 0px 0px 10px 10px;
+                }
+            }
+        }
+    }
+    &__thumb {
+        &-wrap {
+            position: relative;
+            margin-left: 50px;
+            z-index: 5;
+            margin-bottom: 47px;
+            @media #{$xs,$sm,$md,$lg} {
+                margin-left: 0;
+            }
+            img {
+                border-radius: 10px;
+                width: 100%;
+            }
+            .shape-two {
+                position: absolute;
+                bottom: -30px;
+                right: -74px;
+                max-width: 383px;
+                z-index: 1;
+                @media #{$xxl,$md,$sm,$xs} {
+                    right: 0;
+                }
+                @media #{$lg} {
+                    right: -10px;
+                }
+                @media #{$xs,$sm} {
+                    max-width: 140px;
+                }
+                img {
+                    border-radius: 210px;
+                }
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: calc(100% + 32px);
+                    height: calc(100% + 32px);
+                    background: linear-gradient(90deg, #E5382A 0%, rgba(229, 56, 42, 0) 100%);
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 370px;
+                    z-index: -1;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .shape-one {
+                position: absolute;
+                bottom: -46px;
+                left: -25px;
+                background: var(--bd-primary);
+                display: inline-flex;
+                align-items: center;
+                flex-direction: column-reverse;
+                padding: 51px 38px;
+                justify-content: center;
+                border-radius: 111px;
+                text-align: center;   
+                @media #{$lg,$sm,$xs} {
+                    left: 15px;
+                    padding: 41px 28px;
+                }
+                @media #{$xxs} {
+                    padding: 31px 18px;
+                }
+                p {
+                    color: var(--bd-white);
+                    text-transform: capitalize;
+                    @media #{$xs} {
+                        font-size: 14px;
+                    }
+                    b {
+                        display: block;
+                        color: var(--bd-white);
+                        font-size: 30px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }    
+        }
+    }
+    &__skill {
+        background-color: var(--bd-white);
+        padding: 30px 30px;
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        @media #{$xs} {
+            padding: 20px 20px;
         }
     }
 }
-.about-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 35px;;
-    border-top: 1px solid var(--bd-border-primary);
-    .about-info-item {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding-top: 30px;
-        &:not(:last-child) {
-            border-right: 1px solid var(--bd-border-primary);
-            margin-right: 30px;
-            padding-right: 30px;
+// List css
+.list {
+    &__item {
+        &_icon {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            background: var(--bd-primary);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            border-radius: 50%;
+            color: var(--bd-white);
+            position: relative;
+            top: 3px;;
+        }
+        &-text {
+            font-weight: 700
         }
     }
-    .content {
-        .title {
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-        .description {
-            font-size: 14px;
+}
+// Skill css
+.bd-progress {
+    &__skill {
+        &-item {
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: 35px;
+            }
+            h4 {
+                margin-bottom: 13px;
+                padding-right: 50px;
+                font-size: 16px;
+            }
+            .progress-count {
+                position: absolute;
+                top: 0px;
+                right: 0;
+                font-size: 18px;
+                font-weight: var(--bd-fw-medium);
+                font-family: var(--bd-ff-heading);
+            }
+            .progress {
+                height: 10px;
+                background-color: transparent;
+                border-radius: 0;
+                overflow: visible;
+                position: relative;
+                z-index: 1;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -moz-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    height: 10px;
+                    width: 100%;
+                    background-color: #ececec;
+                    z-index: -1;
+                    border-radius: 17px;
+                }
+            }
+            .progress-bar {
+                background-color: var(--bd-primary);
+                overflow: visible;
+                @include border-radius(10px);
+            }
         }
     }
 }
