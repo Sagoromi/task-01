@@ -233,15 +233,13 @@
     }
 }
 .sidebar-toggle {
-    width: 100px;
-    height: 100px;
     background-color: var(--bd-primary);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     @media #{$xs,$sm} {
         width: 70px;
-  height: 70px;
+        height: 70px;
     }
 }
 .offcanvas-slider-content {
